@@ -10,7 +10,14 @@ export default function Character(props){
             <CharContainer>
                 <StyledH2><h2>{attr.name}</h2></StyledH2>
                 <StyledP><p>{attr.birth_year}</p></StyledP>
-                <StyledDiv onClick={()=>setActiveChar(attr.name)}>
+                <StyledDiv onClick={()=>{
+                    if(isUp){
+                        setActiveChar(null)
+                    }
+                    else{
+                        setActiveChar(attr.name)
+                    }
+                }}>
                     <Arrow isUp={isUp}/>
                 </StyledDiv>
             </CharContainer>
